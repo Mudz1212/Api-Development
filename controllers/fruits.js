@@ -58,7 +58,7 @@ const deleted = async (req, res) => {
   try {
     const dFruit = await Fruit.show(name);
     const result = await dFruit.delete(req.params);
-    res.status(200).send(dFruit);
+    res.status(204).send(dFruit);
   } catch {
     res.status(404).send({ error: err.message });
   }
